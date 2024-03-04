@@ -37,13 +37,13 @@ module.exports = function (config) {
     },
     reporters: ['progress', 'kjhtml'],
     // browsers: ['Chrome'],
-    browsers: ['ChromeHeadlessNoSandbox'],
-    customLaunchers: {
-        ChromeHeadlessNoSandbox: {
-            base: 'ChromeHeadless',
-            flags: ['--no-sandbox']
-        }
-    },
+    browsers: ['ChromeHeadless'],
+    // customLaunchers: {
+    //     ChromeHeadlessNoSandbox: {
+    //         base: 'ChromeHeadless',
+    //         flags: ['--no-sandbox']
+    //     }
+    // },
     logLevel: config.LOG_INFO,
     autoWatch: true,
     // captureTimeout: 6000,
