@@ -17,18 +17,19 @@ pipeline {
     }
  
     stage('Test') {
-      parallel {
-        stage('Static code analysis') {
-            steps { echo 'corriendo Test' }
-        }
-        stage('Unit tests') {
-            steps { sh 'npm run test' }
+      steps {
+        dir('test') {
+          sh 'npm run test'
         }
       }
     }
  
     stage('Build') {
-      steps { sh 'npm run build' }
+      steps { 
+        dir('test') {
+          sh 'npm run build' 
+        }        
+      }
     }
   }
 }
