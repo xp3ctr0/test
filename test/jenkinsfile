@@ -8,7 +8,7 @@ pipeline {
   stages {
 
     stage('In') {
-      steps { sh 'cd test' }      
+      steps { sh 'cd ./test' }      
     }
 
     stage('Install') {      
