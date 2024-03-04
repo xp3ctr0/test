@@ -32,4 +32,11 @@ pipeline {
       }
     }
   }
+  post {
+    always{
+      mail to: "jegc9323@gmail.com",
+      subject: "Test Email Jhon",
+      body: "sos un berraco"
+    }
+  }
 }
