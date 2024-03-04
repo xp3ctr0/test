@@ -38,8 +38,8 @@ module.exports = function (config) {
     browsers: ['ChromeHeadless'],
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    captureTimeout: 6000,
-    singleRun: true,
+    // captureTimeout: 6000,
+    singleRun: false,
     restartOnFileChange: true
   });
 };
