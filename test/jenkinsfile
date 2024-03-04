@@ -7,12 +7,13 @@ pipeline {
 
   stages {
 
-    stage('In') {
-      steps { sh 'cd ./test' }      
-    }
-
     stage('Install') {      
-      steps { sh 'npm install' }
+      steps { 
+        git branch: 'main', url: 'https://github.com/xp3ctr0/test.git'
+        dir('test') {
+          sh 'npm install'
+        }
+      }
     }
  
     stage('Test') {
