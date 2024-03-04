@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+   environment {
+        recipientEmails = "jegc9323@gmail.com, jegc_93@hotmail.com"
+    }
+
   tools {
     nodejs "node 21.6.2"
   }
@@ -34,7 +38,7 @@ pipeline {
   }
   post {
     always{
-      mail to: "jegc9323@gmail.com",
+      mail to: "${recipientEmails}",
       subject: "Test Email Jhon",
       body: "sos un berraco"
     }
