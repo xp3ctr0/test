@@ -38,9 +38,12 @@ pipeline {
   }
   post {
     always{
+      archiveArtifacts artifacts: '*.csv', onlyIfSuccessful: true
+
       mail to: "${recipientEmails}",
-      subject: "Test Email Jhon",
-      body: "sos un berraco"
+      subject: "jenkins build:${currentBuild.currentResult}: ${env.JOB_NAME}",
+      body: "${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}"
+      attachmentsPattern: '*.csv'
     }
   }
 }
